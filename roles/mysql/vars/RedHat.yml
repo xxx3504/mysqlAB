@@ -1,0 +1,5 @@
+---  
+mysql_pkgs:  
+- libselinux-python  
+- mysql-server  
+- MySQL-python  
