@@ -1,0 +1,7 @@
+- hosts: mysql-master 
+  roles: 
+  - {role: mysql, mysql_db: none,mysql_users: [{name: root, pass: "abcd.1234", priv: "*.*:ALL"}], mysql_db_id: 1008 } 
+
+- hosts: mysql-slave 
+  roles: 
+  - {role: mysql, mysql_db: none, mysql_users: none,mysql_repl_role: slave, mysql_repl_master: 192.168.192.134 ,mysql_db_id:1009, mysql_repl_user: [{name: repl, pass: "abcd.1234"}] }
