@@ -1,0 +1,20 @@
+---
+- hosts: 192.168.192.134
+  tasks:
+  - name: aptitute purge nginx mysql-server php5-fpm
+    apt: name={{ item }} state=absent purge=yes
+    with_items:
+    - nginx
+    - nginx-common
+    - nginx-full
+    - mysql-server 
+    - mysql-server-5.5
+    - mysql-server-core-5.5 
+    - mysql-common 
+    - mysql-client-5.5 
+    - mysql-client-core-5.5
+    - libdbd-mysql-perl 
+    - libmysqlclient18
+    - php5-fpm
+    - php5-common
+    - php5-mysql
